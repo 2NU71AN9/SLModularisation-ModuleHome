@@ -15,7 +15,11 @@ import ModuleComm
 class FaceRecognitionViewController: BaseXibViewController {
 
     @IBOutlet weak var cancelBtn: UIButton!
-    @IBOutlet weak var switchBtn: UIButton!
+    @IBOutlet weak var switchBtn: UIButton! {
+        didSet {
+            switchBtn.setImage(R.image.switchCamera40(), for: .normal)
+        }
+    }
 
     /// 负责输入和输出设备之间的连接会话,数据流的管理控制
     private lazy var session: AVCaptureSession = {
